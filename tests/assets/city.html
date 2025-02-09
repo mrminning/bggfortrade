@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html ng-app="GeekApp" lang="en-US" ng-cloak>
+<head>
+	<meta charset='utf-8'>
+	<meta id="vp" name="viewport" content="width=device-width, initial-scale=1.0">
+			<script>
+			window.addEventListener( 'DOMContentLoaded',  function() {
+				var width = document.documentElement.clientWidth || window.innerWidth;
+				if (width < 960) {
+					var mvp = document.getElementById('vp');
+					// android debugging
+					mvp.setAttribute('content','width=960');
+				}
+			});
+		</script>
+		<meta content='yes' name='apple-mobile-web-app-capable'>
+	<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+
+			<title>BoardGameGeek | Gaming Unplugged Since 2000</title>
+	
+	
+<link rel="apple-touch-icon" 	href="https://cf.geekdo-static.com/icons/touch-icon180.png" />
+<link rel="shortcut icon" 		href="https://cf.geekdo-static.com/icons/favicon2.ico" type="image/ico" />
+<link rel="icon" 					href="https://cf.geekdo-static.com/icons/favicon2.ico" type="image/ico" />
+<link rel="search" 				href="/game-opensearch.xml" type="application/opensearchdescription+xml" title="BGG Game Search" />
+<meta name="apple-mobile-web-app-title" content="BGG">
+
+<meta name="theme-color" content="#2e2b47">
+<link rel="preconnect" href="https://api.geekdo.com" />
+
+
+
+
+	<meta property="og:image" content="https://cf.geekdo-static.com/images/opengraph/bgg_opengraph.png" />
+
+
+
+	<meta name="keywords" content="board game, boardgames, boardgame, board, games, game, hobby, boardgamegeek, geek, geekdo">
+
+<script>window.AdSlots = window.AdSlots || {
+	cmd: [],
+	disableScripts: ['gpt'],
+	renderOnFirstLoad: false,
+	divCheck: false
+};</script>
+
+
+						<link rel='stylesheet' type='text/css' href='https://cf.geekdo-static.com/static/geekui_master2_673ba99483a60.css'>
+					<link rel='stylesheet' type='text/css' href='https://cf.geekdo-static.com/static/css_master2_673ba98647f3a.css'>
+			
+	<base href="/">
+
+	<script src="https://kit.fontawesome.com/ece5b35462.js" crossorigin="anonymous"></script>
+
+<script>
+	var GEEK = GEEK || {};
+	GEEK.adBlock = {"blockleaderboard":0,"blocklargeleaderboard":0,"blockskyscraper":0,"blockrectangle":0,"blockitembanner":0,"blocktextad":0,"blockebay":0,"blocksupportdrive":0,"blockamazon":0,"blockamazonsearch":0,"blockcontestsmodule":0,"blockbggstore":0,"blockbuyacopy":0,"blockpreview":0,"blockbetweenposts":0,"blocksleevesad":0};
+	GEEK.adConfig = {"blockleaderboard":null,"blockskyscraper":null,"noadsense":null,"blocksupportdrive":null};
+	GEEK.adSlots = {"dfp-leaderboard":{"name":"boardgame_leaderboard_728x90"},"dfp-skyscraper":{"name":"boardgame_skyscraper_160x600"},"dfp-medrect":{"name":"boardgame_rectangle_300x250"},"dfp-repeater":{"name":"boardgame_home_repeater"},"dfp-medrect-reserved-home":{"name":"boardgame_reserved_home_300x250"},"dfp-leaderboard-lg":{"name":"boardgame_home_hero"},"dfp-home-sidekick":{"name":"boardgame_home_repeater"},"dfp-inline-post":{"name":"boardgame_inline_post"}};
+	GEEK.legacyAds = [];
+	GEEK.bggStoreAds = [];
+	GEEK.googleTargets = [];
+	GEEK.userid = 0;
+	GEEK.domainname = 'boardgamegeek.com';
+	GEEK.domain = 'boardgame';
+	GEEK.geekitemPreload = {};
+	GEEK.geekitemSettings = null;
+	GEEK.geekitemModules = null;
+	GEEK.geekGlobalSettings = {"shutdown_file_ops":"1","shutdown_storeimage_ops":"0","shutdown_edit_avatar":"0","shutdown_file_upload":"0","shutdown_file_download":"0","shutdown_image_upload":"0"};
+	GEEK.geekimageSettings = null;
+	GEEK.legacy = 1;
+	GEEK.apiurlsPrefix = 'https://api.geekdo.com';
+
+	
+		
+		GEEK.apiurls = {
+		'root': '/api',
+		'amazon': '/api/amazon',
+		'files': '/api/files',
+		'geekitems': '/api/geekitems',
+		'collectionstatsgraph': '/api/collectionstatsgraph',
+		'images': '/api/images',
+		'threads': '/api/forums/threads',
+	 	'forums': '/api/forums',
+		'videos': '/api/videos',
+		'hotness': '/api/hotness',
+		'dynamicinfo': '/api/dynamicinfo',
+		'subtypeinfo': '/api/subtypeinfo',
+		'geekbay': '/api/geekbay',
+		'geekmarket': '/market/api/v1',
+	    'geekmarketapi': '/api/market',
+		'geeklists': '/api/geeklists',
+		'reviews': '/api/forumreviews',
+		'collections': '/api/collections',
+		'linkeditems': '/api/geekitem/linkeditems',
+		'subscriptions': '/api/subscriptions',
+	    'fans': '/api/fans',
+	    'geekpreviews': '/api/geekpreviews',
+	    'geekpreviewitems': '/api/geekpreviewitems',
+	   	'geekpreviewparentitems': '/api/geekpreviewparentitems',
+		'recs': '/api/geekitem/recs',
+	    'awards': '/api/geekawards',
+		'historicalrankgraph':  '/api/historicalrankgraph',
+		'blueprint_recipes': '/api/blueprints/recipes',
+		'affiliateads' : '/api/affiliateads',
+		'sleevesbycard': '/api/sleevesbycard',
+		'cardsetsbygame': '/api/cardsetsbygame',
+	};
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104725-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('consent', 'default', {
+		'ad_storage': 'denied',
+		'analytics_storage': 'denied',
+		'personalization_storage': 'denied',
+		'wait_for_update': 3000
+		 });
+	gtag('config', 'UA-104725-1', {
+		'cookie_domain': 'boardgamegeek.com',
+		'send_page_view': false
+	});
+</script>
+
+        						<script type='text/javascript' src='https://cf.geekdo-static.com/static/geekangular17_master2_673ba9a26e8a4.js'></script>
+					<script type='text/javascript' src='https://cf.geekdo-static.com/static/geekui_master2_673ba99483a60.js'></script>
+					<script type='text/javascript' src='https://cf.geekdo-static.com/static/js_master2_673ba985cc574.js'></script>
+					<script type='text/javascript' src='https://cf.geekdo-static.com/static/geekoutputtemplates_master2_673ba9a33af6c.js'></script>
+					<script type='text/javascript' src='https://cf.geekdo-static.com/static/geekuicommontemplates_master2_673ba9a341fe8.js'></script>
+			<script>
+	window.geekCookieConsent.gtagReady.then(function() {
+		gtag('event', 'page_view');
+	});
+</script>
+	<!-- why this? -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+
+<!-- Add to main?
+<link rel="apple-touch-icon" 	href="https://cf.geekdo-static.com/icons/appleicon.png" />
+<link rel="shortcut icon" 		href="https://cf.geekdo-static.com/icons/favicon.ico" type="image/ico" />
+<link rel="icon" 					href="https://cf.geekdo-static.com/icons/favicon.ico" type="image/ico" />
+<link rel="search" 				href="/game-opensearch.xml" type="application/opensearchdescription+xml" title="BGG Game Search" />
+-->
+
+
+
+
+
+<!--this is used only for GeekMap -->
+
+
+<!-- deal with adsense
+	<script type="text/javascript">
+		window.google_analytics_uacct = "UA-104725-1";
+		var googletag = googletag || { };
+		googletag.cmd = googletag.cmd || [];
+		( function() {
+			var gads = document.createElement('script');
+			gads.async = true;
+			gads.type  = 'text/javascript';
+			gads.src   = "//www.googletagservices.com/tag/js/gpt.js";
+			var node = document.getElementsByTagName('script')[0];
+			node.parentNode.insertBefore(gads, node);
+		} )();
+
+		adunits = [
+			{
+				name:    'boardgame_button_120x45',
+				size:    [ 120, 45 ],
+				target:  'dfp-button'
+			},
+			{
+				name:    'boardgame_leaderboard_728x90',
+				size:    [ 728, 90 ],
+				target:  'dfp-leaderboard'
+			},
+			{
+				name:    'boardgame_skyscraper_160x600',
+				size:    [ 160, 600 ],
+				target:  'dfp-skyscraper'
+			},
+			{
+				name:    'boardgame_rectangle_300x250',
+				size:    [ 300, 250 ],
+				target:  'dfp-medrect'
+			},
+			{
+				name:    'boardgame_rectangle_300x250',
+				size:    [ 300, 250 ],
+				target:  'dfp-medrect-reserved-home'
+			},
+			{
+				name:    'boardgame_button_120x90',
+				size:    [ 120, 90 ],
+				target:  'dfp-giftguide'
+			}
+		];
+
+		googletag.cmd.push(function() {
+			for( var i=0; i< adunits.length; i++ )
+			{
+				unit = adunits[i];
+				googletag.defineUnit('/1005854/ca-pub-7206761047394129/'+unit.name, unit.size, unit.target).
+				addService(googletag.pubads());
+			}
+
+			
+			googletag.pubads().setTargeting( "subdomain", "all" );
+			googletag.enableServices();
+		} );
+
+	</script>
+-->
+
+<script>
+	function start() {
+		
+	}
+
+	function ondomready() {
+				
+		GEEK.addHandlers();
+		GEEK.recaptchaKey = '6Ldyr6EaAAAAAE0F2hYgtHHqbF6nKPTENAwo6SyU';
+	}
+
+	if( typeof window.addEvent === "function" ) {
+		window.addEvent('domready', function() {
+			ondomready();
+		} );
+	} else {
+		window.addEventListener( "DOMContentLoaded", function() {
+			ondomready();
+	} );
+	}
+	window.onload = start;
+</script>
+
+
+</head>
+
+<body ng-controller="GeekOutput_LayoutCtrl as layoutctrl"
+		class="domain-boardgame"
+
+		ng-class="{ 'has-no-max-width' : layoutctrl.geekitemSettings.fluidlayout }">
+
+
+<div class='d-flex flex-column min-vh-100'>
+        	<div id="global-header-outer" class='global-header-outer'
+	  ng-controller="NavCtrl as navctrl"
+	  click-out="navctrl.closeMobileMenu()">
+
+	<geeknav-menu></geeknav-menu>
+</div>
+
+	 
+	
+	<main class='global-body flex-grow-1'
+		  id="mainbody"
+		  ng-class="{ 'has-overlay-sidebar': layoutctrl.showOverlaySidebar, 'has-hidden-fixed-sidebar': layoutctrl.localStorage.hideFixedSidebar }">
+		
+		<a id='mainbodytarget' tabindex="-1"></a>
+
+		<!-- Home King Ad -->
+		
+		<div hide-ad-block="blockleaderboard" >
+			<div class="advertisement-leaderboard">
+				<div class='center-block' ng-dfp-ad="dfp-leaderboard"></div>
+			</div>
+		</div>
+
+		<div class='global-body-content-container container-fluid'>
+							<geekoutput-sidebar deactivate-overlay-sidebar='layoutctrl.deactivateOverlaySidebar' show-overlay-sidebar='layoutctrl.showOverlaySidebar'></geekoutput-sidebar>
+         
+			
+			<div class='global-body-content pending'  ng-class="{'ready': layoutctrl.ready}">
+		
+				<a id='maincontenttarget' tabindex="-1"></a>
+			
+				 								<div class="legacy">
+	<div id="container" class="yui-skin-sam">
+		<div id="maincontent" ng-non-bindable>
+			<div class="bluebox">
+	<form method="GET" action="/users">
+		<label for="avatars-country" class="fwn">Country:</label>
+			<select id="avatars-country" name="country">
+																		<option >Abkhazia</option> 									<option >Adjara</option> 									<option >Afghanistan</option> 									<option >Akrotiri and Dhekelia</option> 									<option >Åland</option> 									<option >Albania</option> 									<option >Algeria</option> 									<option >American Samoa</option> 									<option >Andorra</option> 									<option >Angola</option> 									<option >Anguilla</option> 									<option >Antarctica</option> 									<option >Antigua and Barbuda</option> 									<option >APO/FPO</option> 									<option >Argentina</option> 									<option >Armenia</option> 									<option >Aruba</option> 									<option >Ascension Island</option> 									<option >Australia</option> 									<option >Austria</option> 									<option >Azerbaijan</option> 									<option >Bahamas</option> 									<option >Bahrain</option> 									<option >Bangladesh</option> 									<option >Barbados</option> 									<option >Belarus</option> 									<option >Belgium</option> 									<option >Belize</option> 									<option >Benin</option> 									<option >Bermuda</option> 									<option >Bhutan</option> 									<option >Bolivia</option> 									<option >Bonaire</option> 									<option >Bosnia and Herzegovina</option> 									<option >Botswana</option> 									<option >Bouvet Island</option> 									<option >Brazil</option> 									<option >British Indian Ocean Territory</option> 									<option >British Virgin Islands</option> 									<option >Brunei</option> 									<option >Bulgaria</option> 									<option >Burkina Faso</option> 									<option >Burundi</option> 									<option >Cambodia</option> 									<option >Cameroon</option> 									<option >Canada</option> 									<option >Cape Verde</option> 									<option >Cayman Islands</option> 									<option >Central African Republic</option> 									<option >Chad</option> 									<option >Chile</option> 									<option >China</option> 									<option >Christmas Island</option> 									<option >Cocos [Keeling] Islands</option> 									<option >Colombia</option> 									<option >Comoros</option> 									<option >Cook Islands</option> 									<option >Costa Rica</option> 									<option >Croatia</option> 									<option >Cuba</option> 									<option >Curacao</option> 									<option >Cyprus</option> 									<option >Czech Republic</option> 									<option >Democratic Republic of the Congo</option> 									<option >Denmark</option> 									<option >Djibouti</option> 									<option >Dominica</option> 									<option >Dominican Republic</option> 									<option >East Timor</option> 									<option >Ecuador</option> 									<option >Egypt</option> 									<option >El Salvador</option> 									<option >England</option> 									<option >Equatorial Guinea</option> 									<option >Eritrea</option> 									<option >Estonia</option> 									<option >Ethiopia</option> 									<option >Falkland Islands</option> 									<option >Faroe Islands</option> 									<option >Fiji</option> 									<option >Finland</option> 									<option >France</option> 									<option >French Guiana</option> 									<option >French Polynesia</option> 									<option >French Southern Territories</option> 									<option >Gabon</option> 									<option >Gambia</option> 									<option >Georgia</option> 									<option >Germany</option> 									<option >Ghana</option> 									<option >Gibraltar</option> 									<option >Greece</option> 									<option >Greenland</option> 									<option >Grenada</option> 									<option >Guadeloupe</option> 									<option >Guam</option> 									<option >Guatemala</option> 									<option >Guernsey</option> 									<option >Guinea</option> 									<option >Guinea-Bissau</option> 									<option >Guyana</option> 									<option >Haiti</option> 									<option >Heard Island and McDonald Islands</option> 									<option >Honduras</option> 									<option >Hong Kong</option> 									<option >Hungary</option> 									<option >Iceland</option> 									<option >India</option> 									<option >Indonesia</option> 									<option >Iran</option> 									<option >Iraq</option> 									<option >Ireland</option> 									<option >Isle of Man</option> 									<option >Israel</option> 									<option >Italy</option> 									<option >Ivory Coast</option> 									<option >Jamaica</option> 									<option >Japan</option> 									<option >Jersey</option> 									<option >Jordan</option> 									<option >Kazakhstan</option> 									<option >Kenya</option> 									<option >Kiribati</option> 									<option >Kosovo</option> 									<option >Kuwait</option> 									<option >Kyrgyzstan</option> 									<option >Laos</option> 									<option >Latvia</option> 									<option >Lebanon</option> 									<option >Lesotho</option> 									<option >Liberia</option> 									<option >Libya</option> 									<option >Liechtenstein</option> 									<option >Lithuania</option> 									<option >Luxembourg</option> 									<option >Macao</option> 									<option >Macedonia</option> 									<option >Madagascar</option> 									<option >Malawi</option> 									<option >Malaysia</option> 									<option >Maldives</option> 									<option >Mali</option> 									<option >Malta</option> 									<option >Marshall Islands</option> 									<option >Martinique</option> 									<option >Mauritania</option> 									<option >Mauritius</option> 									<option >Mayotte</option> 									<option >Mexico</option> 									<option >Micronesia</option> 									<option >Moldova</option> 									<option >Monaco</option> 									<option >Mongolia</option> 									<option >Montenegro</option> 									<option >Montserrat</option> 									<option >Morocco</option> 									<option >Mozambique</option> 									<option >Myanmar [Burma]</option> 									<option >Nagorno-Karabakh</option> 									<option >Namibia</option> 									<option >Nauru</option> 									<option >Nepal</option> 									<option >Netherlands</option> 									<option >Netherlands Antilles</option> 									<option >New Caledonia</option> 									<option >New Zealand</option> 									<option >Nicaragua</option> 									<option >Niger</option> 									<option >Nigeria</option> 									<option >Niue</option> 									<option >Norfolk Island</option> 									<option >North Korea</option> 									<option >Northern Mariana Islands</option> 									<option >Norway</option> 									<option >Oman</option> 									<option >Other-Africa</option> 									<option >Other-Asia</option> 									<option >Other-Eastern Europe</option> 									<option >Other-Middle East</option> 									<option >Other-South Pacific</option> 									<option >Pakistan</option> 									<option >Palau</option> 									<option >Palestine</option> 									<option >Panama</option> 									<option >Papua New Guinea</option> 									<option >Paraguay</option> 									<option >Peru</option> 									<option >Philippines</option> 									<option >Pitcairn Islands</option> 									<option >Poland</option> 									<option >Portugal</option> 									<option >Puerto Rico</option> 									<option >Qatar</option> 									<option >Republic of the Congo</option> 									<option >Réunion</option> 									<option >Romania</option> 									<option >Russia</option> 									<option >Rwanda</option> 									<option >Saint Barthélemy</option> 									<option >Saint Helena</option> 									<option >Saint Kitts and Nevis</option> 									<option >Saint Lucia</option> 									<option >Saint Martin</option> 									<option >Saint Pierre and Miquelon</option> 									<option >Saint Vincent and the Grenadines</option> 									<option >Samoa</option> 									<option >San Marino</option> 									<option >São Tomé and Príncipe</option> 									<option >Saudi Arabia</option> 									<option >Scotland</option> 									<option >Senegal</option> 									<option >Serbia</option> 									<option >Seychelles</option> 									<option >Sierra Leone</option> 									<option >Singapore</option> 									<option >Sint Maarten</option> 									<option >Slovakia</option> 									<option >Slovenia</option> 									<option >Solomon Islands</option> 									<option >Somalia</option> 									<option >South Africa</option> 									<option >South Georgia and the South Sandwich Islands</option> 									<option >South Korea</option> 									<option >South Sudan</option> 									<option >Spain</option> 									<option >Sri Lanka</option> 									<option >Sudan</option> 									<option >Suriname</option> 									<option >Svalbard and Jan Mayen</option> 									<option >Swaziland</option> 									<option SELECTED>Testcountry</option> 									<option >Switzerland</option> 									<option >Syria</option> 									<option >Taiwan</option> 									<option >Tajikistan</option> 									<option >Tanzania</option> 									<option >Thailand</option> 									<option >Togo</option> 									<option >Tokelau</option> 									<option >Tonga</option> 									<option >Trinidad and Tobago</option> 									<option >Tristan da Cunha</option> 									<option >Tunisia</option> 									<option >Turkey</option> 									<option >Turkmenistan</option> 									<option >Turks and Caicos Islands</option> 									<option >Tuvalu</option> 									<option >Uganda</option> 									<option >Ukraine</option> 									<option >United Arab Emirates</option> 									<option >United Kingdom</option> 									<option >United States</option> 									<option >Uruguay</option> 									<option >U.S. Minor Outlying Islands</option> 									<option >U.S. Virgin Islands</option> 									<option >Uzbekistan</option> 									<option >Vanuatu</option> 									<option >Vatican City</option> 									<option >Venezuela</option> 									<option >Vietnam</option> 									<option >Wales</option> 									<option >Wallis and Futuna</option> 									<option >Western Sahara</option> 									<option >Yemen</option> 									<option >Zambia</option> 									<option >Zimbabwe</option> 							</select>
+		<label for="avatars-state" class="fwn">State:</label> <input id="avatars-state" type='text' name='state' value="">
+		<label class="fwn" for="avatars-city">City:</label> <input id="avatars-city" type='text' name='city' value="Testcity">
+		&nbsp;&nbsp;&nbsp;<label for="avatars-has-avatar" class="fwn">Has Avatar:</label> <input id="avatars-has-avatar" type='checkbox' name='avatar' value="1" >
+		&nbsp;&nbsp;&nbsp;<input type="submit" value="Apply">
+	</form>
+</div>
+
+<p align="right"></p>
+<table width="100%" class="forum_table">
+	<tr>
+			<td width="20%" align="center">
+			<div class='avatarblock js-avatar ' data-userid='111111' data-username='Testuser1' data-urlusername='Testuser1'> 
+	<div>Pär Thorbjörnsson</div>
+	<div class='username'>(<a href="/user/Testuser1">Testuser1</a>)</div>
+	
+	<div class='location js-location'>Testcountry<br>Testcity<br>TestState</div>
+	
+	<div>
+		<table align='center'>
+		<tr>
+			<td>
+						<a href="/users?country=Testcountry" class='js-avatar-flag'><img class='icon vam' title='' alt='flag' style=''  src='https://cf.geekdo-static.com/images/flags/16x16/shadow/flag_Testcountry.png' /></a>
+			</td>
+			<td><a href="/geekmail/compose?touser=Testuser1"><img class='icon' title='' alt='msg' style=''  src='https://cf.geekdo-static.com/images/icons/silkicons/email.png' /></a></td>
+			<td><a class='js-showavatarmenu' href="javascript://"><img class='icon' title='' alt='tools' style='' onmouseover="this.src='https://cf.geekdo-static.com/images/avatarmenu_over.gif'" onmouseout="this.src='https://cf.geekdo-static.com/images/avatarmenu.gif'" src='https://cf.geekdo-static.com/images/avatarmenu.gif' /></a>
+			</td>
+		</tr>
+		</table>
+		<span class='js-avatarmenu' style='position:absolute; z-index:300;'></span>
+	</div>
+			
+	
+		
+		
+	
+	 	 
+		
+	
+		
+			
+		
+	<div ></div>
+</div>
+
+		</td>
+				<td width="20%" align="center">
+			<div class='avatarblock js-avatar ' data-userid='222222' data-username='Testuser2' data-urlusername='Testuser2'> 
+	<div>Sebastian Brands</div>
+	<div class='username'>(<a href="/user/Testuser2">Testuser2</a>)</div>
+	
+	<div class='location js-location'>Testcountry<br>Testcity</div>
+	
+	<div>
+		<table align='center'>
+		<tr>
+			<td>
+						<a href="/users?country=Testcountry" class='js-avatar-flag'><img class='icon vam' title='' alt='flag' style=''  src='https://cf.geekdo-static.com/images/flags/16x16/shadow/flag_Testcountry.png' /></a>
+			</td>
+			<td><a href="/geekmail/compose?touser=Testuser2"><img class='icon' title='' alt='msg' style=''  src='https://cf.geekdo-static.com/images/icons/silkicons/email.png' /></a></td>
+			<td><a class='js-showavatarmenu' href="javascript://"><img class='icon' title='' alt='tools' style='' onmouseover="this.src='https://cf.geekdo-static.com/images/avatarmenu_over.gif'" onmouseout="this.src='https://cf.geekdo-static.com/images/avatarmenu.gif'" src='https://cf.geekdo-static.com/images/avatarmenu.gif' /></a>
+			</td>
+		</tr>
+		</table>
+		<span class='js-avatarmenu' style='position:absolute; z-index:300;'></span>
+	</div>
+			
+	
+		
+		
+	
+	 	 
+		
+	
+		
+			
+		
+	<div ></div>
+</div>
+
+		</td>
+			</tr>
+</table>
+<p align="right"></p>
+
+			<div id="legacy_modal"></div>
+		</div>
+	</div>
+</div>
+
+				<div class='global-body-content-secondary'>
+									</div>
+			</div>
+		</div>
+
+	</main>
+			<geekoutput-footer></geekoutput-footer>
+	</div>
+
+
+
+
+</body>
+</html>
