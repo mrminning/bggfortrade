@@ -75,6 +75,7 @@ def get_bgg_data_for_user(user_name, trade, want):
             return None
         if PLEASE_WAIT in str(content):
             time.sleep(WAIT_TIME)
+            get_bgg_data_for_user(user_name, trade, want)
         else:
             return content
 
@@ -91,9 +92,12 @@ def make_request(url):
     req = requests.get(url)
     if req.status_code == 202:
         return PLEASE_WAIT
+    if req.status_code == 429:
+        return PLEASE_WAIT
     if req.status_code == 200:
         return req.content
     else:
+        print("Unhandled response " + str(req.status_code) + " for " + url)
         return None
 
 
