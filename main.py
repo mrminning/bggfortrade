@@ -11,7 +11,9 @@ from dotenv import load_dotenv
 
 # Defaults
 PLEASE_WAIT = "Please try again later for access."
-WAIT_TIME = 8
+PLEASE_WAIT_429 = "Please try again later for access. Too many requests."
+WAIT_TIME = 10
+RETRIES = 3
 threadLock = threading.Lock()
 
 
@@ -69,11 +71,14 @@ def get_bgg_data_for_user(user_name, trade, want):
     else:
         url = build_url_for_user_fortrade_data(user_name)
 
-    for i in range(2):
+    for i in range(RETRIES):
         content = make_request(url)
         if content is None:
             return None
-        if PLEASE_WAIT in str(content):
+        if PLEASE_WAIT_429 in str(content):
+            time.sleep(WAIT_TIME * 2)
+            get_bgg_data_for_user(user_name, trade, want)
+        elif PLEASE_WAIT in str(content):
             time.sleep(WAIT_TIME)
             get_bgg_data_for_user(user_name, trade, want)
         else:
@@ -93,7 +98,7 @@ def make_request(url):
     if req.status_code == 202:
         return PLEASE_WAIT
     if req.status_code == 429:
-        return PLEASE_WAIT
+        return PLEASE_WAIT_429
     if req.status_code == 200:
         return req.content
     else:

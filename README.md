@@ -5,7 +5,7 @@ A small program that searches BoardGameGeek.com for games marked "For Trade" and
 
 
 ## Install
-Install python3.12-venv libxml2-dev libxslt-dev python3-pytest
+Install python3.12-venv libxml2-dev libxslt-dev
 
 ```bash
 python3 -m venv venv
