@@ -106,7 +106,19 @@ def make_request(url):
         return None
 
 
+def get_all_users_in_city(country, city):
+    page = 1
+    users = get_users_in_city(country=country, city=city, page=page)
+    all_users = users
+    while len(users) > 0:
+        page = page + 1
+        users = get_users_in_city(country=country, city=city, page=page)
+        all_users = all_users + users
+    return all_users
+
+
 def main(country, city, wanting_user, show_traders):
+    TAKE = 10
     cities = city.split(",")
     wanted_games = get_users_wanted_games(wanting_user)
     print("%d games wanted in trade by user %s" % (len(wanted_games), wanting_user))
@@ -114,11 +126,13 @@ def main(country, city, wanting_user, show_traders):
         clean_city = city.strip()
         if len(clean_city) == 0:
             continue
-        page = 1
-        users = get_users_in_city(country=country, city=clean_city, page=page)
-        print("City: " + clean_city)
-        i = 0
+        all_users = get_all_users_in_city(country, clean_city)
+        print("City: " + clean_city + " had " + str(len(all_users)) + " users")
+
+        current = 0
+        users = all_users[current:current + TAKE]
         while len(users) > 0:
+            i = 0
             threads = []
             for user in users:
                 i = i + 1
@@ -126,10 +140,12 @@ def main(country, city, wanting_user, show_traders):
                 print("Searching: " + user)
                 thread.start()
                 threads.append(thread)
-            page = page + 1
             for t in threads:
                 t.join()
-            users = get_users_in_city(country=country, city=clean_city, page=page)
+            print ("Wait for threads")
+            time.sleep(WAIT_TIME)
+            current = current + TAKE
+            users = all_users[current:current + TAKE]
     print("Done")
 
 
