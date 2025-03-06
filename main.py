@@ -14,6 +14,7 @@ PLEASE_WAIT = "Please try again later for access."
 PLEASE_WAIT_429 = "Please try again later for access. Too many requests."
 WAIT_TIME = 10
 RETRIES = 3
+TIMEOUT = 5
 threadLock = threading.Lock()
 
 
@@ -39,9 +40,9 @@ def get_games_in_xml(xml_data):
 
 def check_for_wanted_games(wanted_games, games):
     matches = {}
-    for id, game in wanted_games.items():
-        if id in games:
-            matches[id] = game
+    for bgg_id, game in wanted_games.items():
+        if bgg_id in games:
+            matches[bgg_id] = game
     return matches
 
 
@@ -71,7 +72,7 @@ def get_bgg_data_for_user(user_name, trade, want):
     else:
         url = build_url_for_user_fortrade_data(user_name)
 
-    for i in range(RETRIES):
+    for dummy in range(RETRIES):
         content = make_request(url)
         if content is None:
             return None
@@ -94,7 +95,7 @@ def get_users_in_city(country, city, page):
 
 
 def make_request(url):
-    req = requests.get(url)
+    req = requests.get(url, timeout=TIMEOUT)
     if req.status_code == 202:
         return PLEASE_WAIT
     if req.status_code == 429:
@@ -142,7 +143,7 @@ def main(country, city, wanting_user, show_traders):
                 threads.append(thread)
             for t in threads:
                 t.join()
-            print ("Wait for threads")
+            print("Wait for threads")
             time.sleep(WAIT_TIME)
             current = current + TAKE
             users = all_users[current:current + TAKE]
@@ -164,13 +165,13 @@ class searcher(threading.Thread):
             with threadLock:
                 if self.show_traders:
                     print("[%s] %s games for trade:" % (self.name, self.name))
-                    for game_id, title in available_games.items():
+                    for dummy_id, title in available_games.items():
                         print("[%s]    %s" % (self.name, title))
                         print_link = True
                 matches = check_for_wanted_games(self.games, available_games)
                 if len(matches) > 0:
                     print("[%s] %s has the following games you want for trade:" % (self.name, self.name))
-                    for game_id, title in matches.items():
+                    for dummy_id, title in matches.items():
                         print("[%s]    %s" % (self.name, title))
                         print_link = True
                 if print_link:
